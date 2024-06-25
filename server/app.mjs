@@ -1,9 +1,11 @@
 import express from "express";
 import connectionPool from "./utils/db.mjs";
+import "dotenv/config";
 
 const app = express();
 const port = 4001;
 app.use(express.json());
+
 app.get("/test", (req, res) => {
   return res.json("Server API is working 🚀");
 });
