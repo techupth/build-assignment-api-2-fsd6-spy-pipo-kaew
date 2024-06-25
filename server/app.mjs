@@ -23,7 +23,6 @@ app.post("/assignments", async (req, res) => {
       .status(400)
       .json({ message: "Server could not create a requested assignment" });
   }
-  console.log(newAssignment.length);
   try {
     await connectionPool.query(
       "insert into assignments (title, content, category, length, user_id, status, published_at) values ($1, $2, $3, $4, $5, $6, $7)",
